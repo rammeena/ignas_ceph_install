@@ -1,19 +1,10 @@
 # Declare devices to be used as OSDs
 devices:
-  - /dev/sdd
-  - /dev/sde
-  - /dev/sdf
-  - /dev/sdg
-  - /dev/sdh
-  - /dev/sdi
-  - /dev/sdj
-  - /dev/sdk
-  - /dev/sdl
-
+  - /dev/sdb
 
 # Declare devices to be used as block.db devices
-dedicated_devices:
-  - /dev/sdb
+# dedicated_devices:
+#   - /dev/sdc
 
 # Declare devices to be used as block.wal devices
 bluestore_wal_devices:

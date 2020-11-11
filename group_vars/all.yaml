@@ -57,7 +57,7 @@ osd_group_name: osds
 # iscsi_gw_group_name: iscsigws
 mgr_group_name: mgrs
 # rgwloadbalancer_group_name: rgwloadbalancers
-grafana_server_group_name: grafana-server
+# grafana_server_group_name: grafana-server
 
 # If configure_firewall is true, then ansible will try to configure the
 # appropriate firewalling rules so that Ceph daemons can communicate
@@ -312,9 +312,9 @@ cephx: true
 # These variables must be defined at least in all.yml and overrided if needed (inventory host file or group_vars/*.yml).
 # Eg. If you want to specify for each monitor which address the monitor will bind to you can set it in your **inventory host file** by using 'monitor_address' variable.
 # Preference will go to monitor_address if both monitor_address and monitor_interface are defined.
-monitor_interface: bond-stgnet
+monitor_interface: eth1
 #monitor_address: x.x.x.x
-monitor_address_block: 172.23.20.0/24
+# monitor_address_block: 172.23.20.0/24
 # set to either ipv4 or ipv6, whichever your network is using
 ip_version: ipv4
 
@@ -377,8 +377,8 @@ mon_host_v2:
 #osd_memory_target: 4294967296
 journal_size: -1
 block_db_size: -1 # block db size in bytes for the ceph-volume lvm batch. -1 means use the default of 'as big as possible'.
-public_network: 172.23.20.0/24
-cluster_network: 172.23.21.0/24
+public_network: 10.3.0.0/16
+cluster_network: 10.3.0.0/16
 osd_mkfs_type: xfs
 osd_mkfs_options_xfs: -f -i size=2048
 osd_mount_options_xfs: noatime,largeio,inode64,swalloc
@@ -747,7 +747,7 @@ dashboard_ip: 0.0.0.0
 dashboard_admin_user: admin
 #dashboard_admin_user_ro: false
 # This variable must be set with a strong custom password when dashboard_enabled is True
-dashboard_admin_password: Virtual650#
+dashboard_admin_password: cephDashPass
 # We only need this for SSL (https) connections
 #dashboard_crt: ''
 #dashboard_key: ''
@@ -757,11 +757,11 @@ dashboard_admin_password: Virtual650#
 #dashboard_frontend_vip: ''
 #node_exporter_container_image: "docker.io/prom/node-exporter:v0.17.0"
 #node_exporter_port: 9100
-grafana_admin_user: admin
+# grafana_admin_user: admin
 # This variable must be set with a strong custom password when dashboard_enabled is True
-grafana_admin_password: Virtual650#
+# grafana_admin_password: Virtual650#
 # Introducing a new variable to bind grafana service to 0.0.0.0 in grafana.ini
-grafana_ip: 0.0.0.0
+# grafana_ip: 0.0.0.0
 # We only need this for SSL (https) connections
 #grafana_crt: ''
 #grafana_key: ''
