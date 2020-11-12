@@ -400,7 +400,7 @@ osd_objectstore: bluestore
 
 ## Rados Gateway options
 #
-#radosgw_frontend_type: beast # For additionnal frontends see: http://docs.ceph.com/docs/nautilus/radosgw/frontends/
+radosgw_frontend_type: beast # For additionnal frontends see: http://docs.ceph.com/docs/nautilus/radosgw/frontends/
 
 #radosgw_civetweb_port: 8080
 #radosgw_civetweb_num_threads: 512
@@ -421,7 +421,7 @@ osd_objectstore: bluestore
 # These variables must be defined at least in all.yml and overrided if needed (inventory host file or group_vars/*.yml).
 # Eg. If you want to specify for each radosgw node which address the radosgw will bind to you can set it in your **inventory host file** by using 'radosgw_address' variable.
 # Preference will go to radosgw_address if both radosgw_address and radosgw_interface are defined.
-#radosgw_interface: interface
+radosgw_interface: eth1
 #radosgw_address: x.x.x.x
 #radosgw_address_block: subnet
 #radosgw_keystone_ssl: false # activate this when using keystone PKI keys
