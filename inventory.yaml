@@ -21,6 +21,13 @@ all:
         ceph3:
       # vars:
       #   ansible_user: centos
+    rgws:
+      hosts:
+        ceph1:
+        ceph2:
+        ceph3:
+      # vars:
+      #   ansible_user: centos
     grafana-server:
       hosts:
         ceph1:
